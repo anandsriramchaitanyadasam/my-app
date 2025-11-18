@@ -6,11 +6,13 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send('Backend is running successfully');
+  res.send('');
 });
-
+app.get('/health', (req, res) => {
+  res.send('Backend is running');
+});
 app.get('/api/greeting', (req, res) => {
-  res.json({ message: 'Hello from Express API (Fidelity demo)' });
+  res.json({ message: 'Hello from greetingsAPI ' });
 });
 
 app.listen(3000, () => {
